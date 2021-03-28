@@ -21,7 +21,7 @@ def ob():
     font = cv2.FONT_HERSHEY_PLAIN
     colors = np.random.uniform(0, 255, size=(50, 3))
 
-    while True:
+    while True:#Resiz
         def rescale_frame(frame, percent=75):
             scale_percent = 75
             width = int(frame.shape[1] * scale_percent/ 100)
@@ -74,8 +74,8 @@ def ob():
                 #res = str(round(label[i]),2)
                 color = colors[i]
                 cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)
-                #cv2.putText(img, label + "xxx " + confidence, (x, y + 20), font, 2, (255, 255, 255), 2)
-                #cv2.putText(img, "something: " + str(round(obj_count, 2)), (10, 50), font, 2, (0, 0,255), 3)
+                #cv2.putText(img, label + "xxx " + confidence, (x, y + 10), font, 2, (255, 255, 255), 2)
+                #cv2.putText(img, "something: " + str(round), (10, 50), font, 2, (0, 0,255), 3)
                 cv2.putText(frame, label + " " +confidence, (x, y + 20), font, 2, (255, 255, 255), 2)
                 
                 if label == "person" :
@@ -86,7 +86,7 @@ def ob():
         
         
         cv2.imshow('frame', frame)
-        #cv2.putText(frame, "Number of Objects: " + str(round(obj_count, 2)), (10, 50), font, 2, (0, 0,255), 3)
+        
         #winsound.Beep(500, 3000)
         if cv2.waitKey(20)& 0xFF == ord('q'):
             break
@@ -96,3 +96,4 @@ def ob():
 
 
 ob()
+    
